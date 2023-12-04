@@ -22,6 +22,9 @@ class cpp_utilsRecipe(ConanFile):
     # Sources are located in the same place as this recipe, copy them to the recipe
     exports_sources = "CMakeLists.txt", "src/*", "include/*"
 
+    def build_requirements(self):
+        self.test_requires("gtest/1.14.0")
+
     def config_options(self):
         if self.settings.os == "Windows":
             self.options.rm_safe("fPIC")
@@ -43,6 +46,7 @@ class cpp_utilsRecipe(ConanFile):
         cmake = CMake(self)
         cmake.configure()
         cmake.build()
+        cmake.test()
 
     def package(self):
         cmake = CMake(self)

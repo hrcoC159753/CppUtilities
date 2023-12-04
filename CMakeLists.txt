@@ -20,6 +20,8 @@ target_sources(cpp_utils
             include/cpp_utils/cpp_utils.h
 )
 
+add_subdirectory(test)
+
 install(
     TARGETS cpp_utils
     ARCHIVE
