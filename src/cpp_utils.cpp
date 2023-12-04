@@ -3,7 +3,7 @@
 
 
 
-void cpp_utils(){
+void cpp_utils_func(){
     
 
     #ifdef NDEBUG

@@ -19,6 +19,7 @@ target_link_libraries(${TEST_TARGET_NAME}
         GTest::gtest
         GTest::gtest_main
         GTest::gmock
+        cpp_utils
 )
 
 include(GoogleTest)

@@ -3,7 +3,7 @@
 #include <string>
 
 int main() {
-    cpp_utils();
+    cpp_utils_func();
 
     std::vector<std::string> vec;
     vec.push_back("test_package");
