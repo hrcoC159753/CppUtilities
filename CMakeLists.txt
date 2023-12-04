@@ -31,6 +31,9 @@ target_sources(cpp_utils
             ${CMAKE_CURRENT_BINARY_DIR}/include
         FILES
             include/cpp_utils/cpp_utils.h
+            include/cpp_utils/parsing.h
+            include/cpp_utils/printing.h
+            include/cpp_utils/strings.h
             ${CMAKE_CURRENT_BINARY_DIR}/include/cpp_utils/cpp_utils_export.h
 )
 

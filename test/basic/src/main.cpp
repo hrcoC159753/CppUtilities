@@ -55,3 +55,13 @@ TEST(Strings, Trim) {
 
     EXPECT_EQ(cpp_utils::trim("  \n123\t\r  \n"), EXPECTED_OUTPUT);
 }
+
+TEST(Strings, Contains) {
+    EXPECT_TRUE(cpp_utils::contains("  \n123\t\r  \n", '1'));
+    EXPECT_FALSE(cpp_utils::contains("  \n123\t\r  \n", '8'));
+}
+
+TEST(Parsing, Number) {
+    EXPECT_EQ(cpp_utils::toNumber<int>("123"), 123);
+    // EXPECT_NE(cpp_utils::toNumber<float>("123.0f"), 123.0f); // does not compile.
+}

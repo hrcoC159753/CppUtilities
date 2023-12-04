@@ -34,4 +34,9 @@ CPP_UTILS_EXPORT [[nodiscard]] constexpr std::string_view trim(const std::string
     return returnValue;
 }
 
+CPP_UTILS_EXPORT [[nodiscard]] constexpr auto contains(const std::string_view view, const char& c) noexcept
+{
+    return std::ranges::find(view, c) != std::ranges::end(view);
+}
+
 }
