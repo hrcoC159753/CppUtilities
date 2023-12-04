@@ -20,7 +20,7 @@ class cpp_utilsRecipe(ConanFile):
     default_options = {"shared": False, "fPIC": True}
 
     # Sources are located in the same place as this recipe, copy them to the recipe
-    exports_sources = "CMakeLists.txt", "src/*", "include/*"
+    exports_sources = "CMakeLists.txt", "src/*", "include/*", "test/*"
 
     def build_requirements(self):
         self.test_requires("gtest/1.14.0")
@@ -44,7 +44,7 @@ class cpp_utilsRecipe(ConanFile):
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure()
+        cmake.configure(cli_args = ['-DBUILD_SHARED_LIBS:BOOL=True'])
         cmake.build()
         cmake.test()
 
