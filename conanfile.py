@@ -44,7 +44,7 @@ class cpp_utilsRecipe(ConanFile):
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure(cli_args = ['-DBUILD_SHARED_LIBS:BOOL=True'])
+        cmake.configure()
         cmake.build()
         cmake.test()
 
