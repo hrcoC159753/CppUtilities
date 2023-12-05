@@ -9,12 +9,13 @@
 #include <utility>
 #include <cstdint>
 #include <string>
+#include <string_view>
 
 namespace cpp_utils
 {
 
 template<std::ranges::range T>
-requires (not std::same_as<T, std::string>)
+requires (not std::same_as<T, std::string> and not std::same_as<T, std::string_view>)
 CPP_UTILS_EXPORT constexpr std::ostream& operator<<(std::ostream& os, const T& range)
 {
     os << '{';
