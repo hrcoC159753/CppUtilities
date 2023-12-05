@@ -8,11 +8,13 @@
 #include <tuple>
 #include <utility>
 #include <cstdint>
+#include <string>
 
 namespace cpp_utils
 {
 
 template<std::ranges::range T>
+requires (not std::same_as<T, std::string>)
 CPP_UTILS_EXPORT constexpr std::ostream& operator<<(std::ostream& os, const T& range)
 {
     os << '{';
